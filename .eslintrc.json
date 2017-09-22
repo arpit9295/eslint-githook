@@ -1,37 +1,27 @@
 // http://eslint.org/docs/user-guide/configuring
 
+// Comment AMD in environment if you don't use AMD/RequireJS based dependency injection
+// Comment Babel ESLint parser if you don't use Babel to parse your Javascript
+// Comment unneeded globals according to project requirements
+
 {
   "env": {
-    // uncomment if you use AMD/RequireJs based dependency injection
     "amd": true,
     "browser": true
   },
   
-  // Babel ESLint is a wrapper around the Babel parser that makes it compatible with ESLint so as to avoid unnecessary errors
-  // Uncomment following if you use Babel parser to parse the JS
-  // "parser": "babel-eslint",
+  "parser": "babel-eslint",     // Babel ESLint parser (https://github.com/babel/babel-eslint)
   
-  // globals set up according to project requirements
   "globals":{
-    // Uncomment following if you use AngularJS
-    // "angular": false,
     
-    // Uncomment following if you use VueJS
-    // "vue": false,
+    "angular": false,   // AngularJS global (https://github.com/angular/angular.js)
+    "vue": false,       // VueJS global (https://github.com/vuejs/vue)
+    "moment": false,    // MomentJS global (https://github.com/moment/moment)
+    "module": false,    // ES6 module export globals
+    "Map": false,       // Global for Map (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
     
-    // Uncomment following if you use MomentJs
-    // "moment": false,
-    
-    // Uncomment 'require' and 'define' globals if you use RequireJS based dependency injection.
-    // Alternatively, you can choose to uncomment the env 'amd' property.
-    // "require": false,
-    // "define": false,
-
-    // Uncomment following if you use ES6 module exports
-    // "module": false,
-    
-    // Uncomment following if you use the new Map features
-    // "Map": false
+    "require": false,   // Globals for AMD module Injection
+    "define": false     // (https://github.com/requirejs/requirejs)
   },
   "rules": {
     "array-bracket-spacing": 2,
