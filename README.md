@@ -1,3 +1,5 @@
+To use the git hook, fork the repository. You may choose to modify the eslint configuration or completely remove it and make your own from scratch.
+
 To set up the git hook, you need to first set up ESLint. You can do so using npm:
 
 ```sh
