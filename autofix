@@ -1,0 +1,9 @@
+#!/bin/bash
+files=$(git diff --diff-filter=rd --cached --name-only | grep -E '(.js)$')
+
+# Prevent ESLint help message if no files matched
+if [[ $files != "" ]] ; then
+  for file in ${files}; do
+    node_modules/.bin/eslint --fix $file
+  done;
+fi
