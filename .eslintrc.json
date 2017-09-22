@@ -1,15 +1,37 @@
+// http://eslint.org/docs/user-guide/configuring
+
 {
   "env": {
+    // uncomment if you use AMD/RequireJs based dependency injection
+    "amd": true,
     "browser": true
   },
-  "parser": "babel-eslint",
+  
+  // Babel ESLint is a wrapper around the Babel parser that makes it compatible with ESLint so as to avoid unnecessary errors
+  // Uncomment following if you use Babel parser to parse the JS
+  // "parser": "babel-eslint",
+  
+  // globals set up according to project requirements
   "globals":{
-    "angular": false,
-    "define": false,
-    "moment": false,
-    "require": false,
-    "module": false,
-    "Map": false
+    // Uncomment following if you use AngularJS
+    // "angular": false,
+    
+    // Uncomment following if you use VueJS
+    // "vue": false,
+    
+    // Uncomment following if you use MomentJs
+    // "moment": false,
+    
+    // Uncomment 'require' and 'define' globals if you use RequireJS based dependency injection.
+    // Alternatively, you can choose to uncomment the env 'amd' property.
+    // "require": false,
+    // "define": false,
+
+    // Uncomment following if you use ES6 module exports
+    // "module": false,
+    
+    // Uncomment following if you use the new Map features
+    // "Map": false
   },
   "rules": {
     "array-bracket-spacing": 2,
