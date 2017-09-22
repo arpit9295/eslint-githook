@@ -1,0 +1,21 @@
+#!/bin/bash
+files=$(git diff --diff-filter=rd --cached --name-only | grep -E '(.js)$')
+
+# Prevent ESLint help message if no files matched
+if [[ $files = "" ]] ; then
+  exit 0
+fi
+
+failed=0
+for file in ${files}; do
+  echo "'$file'."
+  git show :$file | node_modules/.bin/eslint -c .eslintrc.json --stdin
+  if [[ $? != 0 ]] ; then
+    failed=1
+  fi
+done;
+
+if [[ $failed != 0 ]] ; then
+  echo "Fix ESLint errors before commit"
+  exit $failed
+fi
